@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = [
-    url(r'^contactapp/', include('contractapp.urls')),
+    url(r'^contractapp/', include('contractapp.urls')),
+    url(r'^jobsapp/', include('jobsapp.urls')),
     url(r'^admin/', admin.site.urls),
 ]

@@ -1,0 +1,157 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container-fluid">
+    <form method="POST">{% csrf_token %}
+        <div class="container-fluid">
+
+            <br />
+            <div class="row font-sm">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                SetUp&nbsp;&nbsp;<i class="fa fa-cogs"></i></h4>
+                        </a><a href="#" class="list-group-item"><span class="float-right">
+                                <i class="fa fa-chevron-right"></i></span>Options</a> <a href="PSCOptions.aspx" class="list-group-item"><span class="float-right"><i class="fa fa-chevron-right"></i>
+                                    </span>PSC Options</a> <a href="#" class="list-group-item"><span
+                                        class="float-right"><i class="fa fa-chevron-right"></i></span>CSC Options</a>
+                        <a href="#" class="list-group-item"><span class="float-right">
+                                <i class="fa fa-chevron-right"></i></span>TSC Options</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Edit&nbsp;&nbsp;<i class="fa fa-comments"></i></h4>
+                        </a><a href="#" class="list-group-item"><span class="float-right">
+                                <i class="fa fa-chevron-right"></i></span>Modify PSC</a>
+                        <a href="#" class="list-group-item"><span class="float-right">
+                                <i class="fa fa-chevron-right"></i></span>Modify CSC</a> <a href="#" class="list-group-item"><span class="float-right"><i class="fa fa-chevron-right"></i>
+                                    </span>Modify TSC</a>
+                    </div>
+                    <br />
+
+
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Application&nbsp;&nbsp;<i class="fa fa-cog fa-spin"></i></h4>
+                        </a><a href="{% url 'pageredirect' 'createPSC' %}" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Create PSC</a>
+                        <a href="{% url 'pageredirect' 'createCSC' %}" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Create CSC</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Create TSC</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Acceptance</a>
+
+                    </div>
+                    <br />
+
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                View&nbsp;&nbsp;<i class="fa fa-user-secret"></i></h4>
+                        </a><a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>View PSCs</a>
+                        <a href="#" class="list-group-item">
+                            <span class="float-right"><i class="fa fa-chevron-right"></i></span>View CSCs</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>View TSCs</a>
+                    </div>
+                    <br />
+
+                </div>
+
+            </div>
+            <div class="row font-sm">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Rejected Contracts&nbsp;&nbsp;<i class=""></i></h4>
+                        </a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>PSC Rejected Contracts</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>CSC Rejected Contracts</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>TSC Rejected Contracts</a>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Pending Approval Contracts&nbsp;&nbsp;<i class=""></i></h4>
+                        </a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>PSCs Pending Approval</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>CSCs Pending Approval</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>TSCs Pending Approval</a>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Unapproved Contracts&nbsp;&nbsp;<i class=""></i></h4>
+                        </a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Unapproved PSC</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Unapproved CSC</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Unapproved TSC</a>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Outstanding Accepted Contracts&nbsp;&nbsp;<i class=""></i></h4>
+                        </a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Outstanding Accepted PSCs</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Outstanding Accepted CSCs</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Outstanding Accepted TSCs</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row font-sm">
+                <div class="col-md-3">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active cent">
+                            <h4 class="txtwhite">
+                                Print&nbsp;&nbsp;<i class=""></i></h4>
+                        </a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Invoices Created</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Approved Contract List</a>
+                        <a href="#" class="list-group-item"><span class="float-right"><i
+                                class="fa fa-chevron-right"></i></span>Reprint Contracts</a>
+                    </div>
+                </div>
+            </div>
+            <asp:Label ID="lblStat" runat="server" CssClass="vis-hid" Text=""></asp:Label>
+    </form>
+    </div>
+    {% endblock %}
+    <!--#47a3da-->

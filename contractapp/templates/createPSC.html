@@ -1,0 +1,218 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container-fluid">
+    <form method="POST" action="/contractapp/createpsc">{% csrf_token %}
+        <!--action="/contractapp/createpsc/"-->
+        <div class="container">
+            <h3>Creat psc</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <label>Entry Date</label>
+                    <br />
+                    <input type="date" ID="txtcDate" name="txtcDate" data-ng-model="txtcDate" ReadOnly="true" class="form-control" />
+                </div>
+                <div class="col-md-3 ">
+                    <Label>Expiry Date</Label>
+                    <br />
+                    <input type="date" ID="txtCExdate" name="txtCExdate" data-ng-model="txtCExdate" class="form-control" />
+                </div>
+                <div class="col-md-3">
+                    <Label>CSC No</Label>
+                    <br />
+                    <input type="text" ID="txtCacntno" name="txtCacntno" data-ng-model="txtCacntno" Class="form-control" AutoComplete="off" />
+                </div>
+                <div class="col-md-3">
+                    <Label>PSC Type</Label><br />
+                    <select class="form-control " id="ddlPscType" name="ddlPscType" data-ng-model="ddlPscType" autofocus="True">
+                </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <Label>Customer ID</Label>
+                    <br>
+                    <select class="form-control" id="ddlCustomerid" name="ddlCustomerid" data-ng-model="ddlCustomerid">
+                </select>
+                </div>
+                <div class="col-md-3">
+                    <label>Customer Name</label>
+                    <br />
+                    <input type="text" ID="txtCcustidname" name="txtCcustidname" data-ng-model="txtCcustidname" Enabled="false" ReadOnly="true" Class="form-control" />
+                    <Label ID="lblLoad" ForeColor="Red"></Label>
+                </div>
+                <div class="col-md-3">
+                    <Label ID="lblsystenanme" Text="System"></Label>
+                    <label>System</label>
+                    <br />
+                    <select class="form-control" id="ddlsystems" name="ddlsystems" data-ng-model="ddlsystems">
+                </select>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <label>Mailing Address</label>
+                    <br />
+                    <textarea ID="txtMailingAddress" name="txtMailingAddress" data-ng-model="txtMailingAddress" Class="form-control" Height="60px"></textarea>
+                </div>
+                <div class="row">
+                    <label>Summary</label>
+                    <br />
+                    <textarea ID="txtSummary" name="txtSummary" data-ng-model="txtSummary" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Introduction</Label><br />
+                    <textarea ID="txtIntrod" name="txtIntrod" data-ng-model="txtIntrod" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Contract Services</Label>
+                    <br />
+                    <textarea ID="txtCProgrammingServices" name="txtCProgrammingServices" data-ng-model="txtCProgrammingServices" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Summary of Work</Label><br />
+                    <textarea ID="txtCSummaryofWork" name="txtCSummaryofWork" data-ng-model="txtCSummaryofWork" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Details of Work</Label><br />
+                    <textarea ID="txtCDetailsofWork" name="txtCDetailsofWork" data-ng-model="txtCDetailsofWork" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Expected Results</Label><br />
+                    <textarea ID="txtCExpectedResults" name="txtCExpectedResults" data-ng-model="txtCExpectedResults" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Scheduled Time</Label><br />
+                    <textarea ID="txtScheduleTime" name="txtScheduleTime" data-ng-model="txtScheduleTime" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Terms</Label><br />
+                    <textarea ID="txtTerms" name="txtTerms" data-ng-model="txtTerms" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Job Completion</Label><br />
+                    <textarea ID="txtJobCompletion" name="txtJobCompletion" data-ng-model="txtJobCompletion" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Cancellation</Label><br />
+                    <textarea ID="txtCancellation" name="txtCancellation" data-ng-model="txtCancellation" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Scheduled Time Changes</Label><br />
+                    <textarea ID="txtSchTimeChanges" name="txtSchTimeChanges" data-ng-model="txtSchTimeChanges" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Travel Costs</Label><br />
+                    <textarea ID="txtTravelCosts" Class="form-control" name="txtTravelCosts" data-ng-model="txtTravelCosts" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Limitation of Liability</Label><br />
+                    <textarea ID="txtLiability" name="txtLiability" data-ng-model="txtLiability" Height="80px" Class="form-control"></textarea>
+                </div>
+                <div class="row">
+                    <Label>Closing</Label><br />
+                    <textarea ID="txtClosing" name="txtClosing" data-ng-model="txtClosing" Class="form-control" Height="120px"></textarea>
+                </div>
+                <div class="row">
+                    <Label>AttachmentB</Label><br />
+                    <textarea Class="form-control" name="editor1" id="editor1" data-ng-model="editor1" Width="100%" Height="300px">
+                    
+                </textarea>
+                    <script>
+                        CKEDITOR.replace('editor1');
+                    </script>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <Label>Hrs Estimate</Label><br />
+                    <input type="number" ID="txtHrsCEstimate" name="txtHrsCEstimate" data-ng-model="txtHrsCEstimate" class="form-control" AutoComplete="off" />
+                </div>
+                <div class="col-md-3">
+                    <Label>Hrly Rate</Label><br />
+                    <input type="number" step="0.01" ID="txtCHrlyRate" name="txtCHrlyRate" data-ng-model="txtCHrlyRate" class="form-control" AutoComplete="off" />
+                </div>
+                <div class="col-md-3">
+                    <Label>Total Estimate</Label><br />
+                    <input type="number" step="0.01" ID="txtCTotalEstimate" name="txtCTotalEstimate" data-ng-model="txtCTotalEstimate" class="form-control" AutoComplete="off" />
+                </div>
+                <div class="col-md-3">
+                    <Label>Deposit</Label><br />
+                    <div class="input-group">
+                        <input type="number" step="0.01" ID="txtCDeposit" name="txtCDeposit" data-ng-model="txtCDeposit" class="form-control" />
+                        <span class="input-group-btn"><button ID="btnCSubmit"  onclick="btnCSubmit_Click()"
+                    class="btn btn-brio" >Calculate</button></span></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <Label>Support Ticket #</Label><br />
+                    <select class="form-control" id="txtWebSubId" name="txtWebSubId" data-ng-model="txtWebSubId">
+                </select>
+                </div>
+                <div class="col-md-3">
+                    <Label>Job No or Task name</Label><br />
+                    <input type="number" type="text" ID="txtJobNo" name="txtJobNo" data-ng-model="txtJobNo" Class="form-control" AutoComplete="off" />
+                </div>
+                <div class="col-md-6"><br><br>
+                    <label class="radio-inline">
+                    <input id="rbtnPrintList" name="rbtnPrintList" data-ng-model="rbtnPrintList" type="radio" style=" position: absolute;" name="rbtnPrintList"  checked="true"  value="Print Now"  />Print Now 
+                </label>
+                    <label class="radio-inline">
+                    <input id="rbtnPrintList" name="rbtnPrintList" data-ng-model="rbtnPrintList" type="radio" style=" position: absolute;" name="rbtnPrintList"  value="Print Later"/>Print Later
+                </label>
+                    <label class="radio-inline">
+                    <input id="rbtnPrintList" name="rbtnPrintList" data-ng-model="rbtnPrintList" type="radio" style=" position: absolute;" name="rbtnPrintList"   value="Do not Print"/>Do not Print
+                </label>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="btn btn-warning" for="my-file-selector">
+                    <input id="my-file-selector1" name="my-file-selector1" file-model = "my-file-selector1" type="file" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
+                    Button Text Here
+                </label>
+                    <span id="upload-file-info"></span>
+                    <br><br>
+                    <label class="btn btn-warning" for="my-file-selector">
+                    <input id="my-file-selector2" name="my-file-selector2" file-model = "my-file-selector2" type="file" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
+                    Button Text Here
+                </label>
+                    <span id="upload-file-info"></span>
+                </div>
+            </div>
+
+            <!--<table>
+            <tr>
+                <td align="center" style="height: 100%; width: 100px; position: fixed">
+                    <Panel ID="Panel1"  Style="width: 360px; background-color: White;
+                        border-width: 2px; border-color: Black; border-style: solid; z-index: 1001">
+                        <table width="300px" style="height: 200px">
+                            <tr>
+                                <td style="height: 100px">
+                                    <Label ID="lblpnlMsg"  Text=""></Label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" valign="top">
+                                    <Button ID="btnYes"  Text="Yes" OnClick="btnYes_Click" />
+                                    <Button ID="btnNo"  Text="No" OnClick="btnNo_Click" />
+                                </td>
+                            </tr>
+                        </table>
+                    </Panel>
+                    
+                    <button ID="Button2"  Style="visibility: hidden" />
+                </td>
+            </tr>
+        </table>-->
+            <br/><br/>
+            <div class="row text-center">
+                <button type="submit" id="btnCSave" class="btn btn-brio " value="Save">Save</button>
+                <button id="btnCClear" class="btn btn-brio " value="Clear">Clear</button>
+            </div>
+        </div>
+        <p>{{ data }}</p>
+
+    </form>
+</div>
+<br><br><br><br><br><br> {% endblock %}
