@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^contractapp/', include('contractapp.urls')),
     url(r'^jobsapp/', include('jobsapp.urls')),
     url(r'^admin/', admin.site.urls),
+    # uerl(r'^$',)
 ]

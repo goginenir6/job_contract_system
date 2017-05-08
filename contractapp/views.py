@@ -33,7 +33,7 @@ def login(request):
                 'login_message' : 'Enter the username and password correctly'})
 
 
-def pageredirect(request, name):
+def redirect_to(request, name, context=None):
     """dynamic link to get urls"""
     if name != "":
         return render(request, name+'.html')
@@ -43,8 +43,8 @@ def pageredirect(request, name):
 def createpsc(request):
     """ save psc """
     import  pdb
-    pdb.set_trace()
-    return pageredirect(request, 'createCSC')
+    # pdb.set_trace()
+    return redirect_to(request, 'createPSC', context={})
 
 # def createpsc(request):
 #     if request.method == "POST":
