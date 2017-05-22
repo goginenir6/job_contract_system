@@ -1,6 +1,6 @@
 {% extends "contract_base.html" %} {% block content %}
 <div class="container-fluid">
-    <form method="POST" action="/contractapp/createpsc">{% csrf_token %}
+    <form method="POST"  action="">{% csrf_token %}
         <!--action="/contractapp/createpsc/"-->
         <div class="container">
             <h3>Creat psc</h3>
@@ -167,17 +167,11 @@
             <br />
             <div class="row">
                 <div class="col-md-6">
-                    <label class="btn btn-warning" for="my-file-selector">
-                    <input id="my-file-selector1" name="my-file-selector1" file-model = "my-file-selector1" type="file" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
-                    Button Text Here
-                </label>
-                    <span id="upload-file-info"></span>
-                    <br><br>
-                    <label class="btn btn-warning" for="my-file-selector">
-                    <input id="my-file-selector2" name="my-file-selector2" file-model = "my-file-selector2" type="file" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
-                    Button Text Here
-                </label>
-                    <span id="upload-file-info"></span>
+                    <label class="btn btn-primary" for="my-file-selector">
+                        <input id="my-file-selector" name="my-file-selector"  type="file" file-model="my-file-selector" style="display:none;" onchange="$('#upload-file-info').html($(this).val());">
+                        Button Text Here
+                    </label>
+                    <span class='label label-info' id="upload-file-info"></span>
                 </div>
             </div>
 
@@ -207,7 +201,7 @@
         </table>-->
             <br/><br/>
             <div class="row text-center">
-                <button type="submit" id="btnCSave" class="btn btn-brio " value="Save">Save</button>
+                <button type="button" id="btnCSave" class="btn btn-brio " ng-model="btnCSave" ng-click="createpscclick()" value="Save">Save</button>
                 <button id="btnCClear" class="btn btn-brio " value="Clear">Clear</button>
             </div>
         </div>

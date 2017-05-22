@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'contractapp',
     'jobsapp'
 ]
-
+AUTH_USER_MODEL = 'contractapp.Employee'
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,7 +75,6 @@ WSGI_APPLICATION = 'job_contract_system.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -84,6 +83,9 @@ DATABASES = {
         'PASSWORD': 'brio1@',
     }
 }
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Password validation

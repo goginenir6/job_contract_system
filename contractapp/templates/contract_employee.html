@@ -1,0 +1,55 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container">
+    <form method="POST">{% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                <label>First Name:</label>
+                <br />
+                <input  ID="txt_emp_fname" name="txt_emp_fname" data-ng-model="txt_emp_fname" class="form-control" />
+            </div>
+            <div class="col-md-3 ">
+                <Label>Last Name:</Label>
+                <br />
+                <input  ID="txt_emp_lname" name="txt_emp_lname" data-ng-model="txt_emp_lname" class="form-control" />
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-3">
+                <label>Email:</label>
+                <br />
+                <input type="email"  ID="txt_emp_email" name="txt_emp_email" data-ng-model="txt_emp_email" class="form-control" />
+            </div>
+            <div class="col-md-3 ">
+                <Label>Password:</Label>
+                <br />
+                <input type="password"   ID="txt_emp_pwd" name="txt_emp_pwd" data-ng-model="txt_emp_pwd" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Is Admin:</label>
+                <br />
+               <label class="checkbox">
+                    <input id="chk_isadmin" type="checkbox"  name="chk_isadmin"   data-ng-model="chk_isadmin" value="email" ng-checked="false"/>True
+                </label>
+            </div>
+            <div class="col-md-3 ">
+                <Label>Status:</Label>
+                <br />
+                <label class="radio-inline">
+                    <input id="rdo_emp_status" type="radio" name="rdo_emp_status"   data-ng-model="rdo_emp_status" value="ACTIVE" ng-checked="true"/>EACTIVE &nbsp;&nbsp;&nbsp;
+                </label>
+                <label class="radio-inline">
+                        <input id="rdo_emp_status" type="radio"  name="rdo_emp_status"   data-ng-model="rdo_emp_status" value="INACTIVE" />INACTIVE
+                </label>
+            </div>
+        </div>
+        <div class="row "><br><br>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" ng-click="emp_saveclick()" value="Save"/>
+            </div>
+        </div>
+    </form>
+    </div>
+    {% endblock %}
+    <!--#47a3da-->

@@ -1,0 +1,22 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container-fluid">
+    <form enctype="multipart/form-data" method="POST" action="">{% csrf_token %}
+        <h2>Employee</h2>
+        <div class="col-md-2"></div>
+        <div class="col-md-3">
+            {% for field in form %}
+                    <b>{{ field.label_tag }}</b>  {{ field }} 
+                    {{ field.errors }}
+            {%endfor%}<br>
+            <div class="row text-center">
+                    <button type="submit" id="btnCSave" class="btn btn-brio " value="Save">Save</button>
+                    <button id="btnCClear" class="btn btn-brio " value="Clear">Clear</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </form>
+</div>
+<script>
+    $('label[for="id_tenantid"]').hide()
+</script>
+{% endblock %}

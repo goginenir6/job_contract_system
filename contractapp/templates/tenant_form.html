@@ -1,0 +1,15 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container-fluid">
+    <form method="POST" action="">{% csrf_token %}
+        <h2>Tenant</h2>
+        <div class="col-md-3">
+        {{ form.as_p }}
+         <div class="row text-center">
+                <button type="submit" id="btnCSave" class="btn btn-brio " value="Save">Save</button>
+                <button id="btnCClear" class="btn btn-brio " value="Clear">Clear</button>
+            </div>
+        </div>
+    </form>
+</div>
+    
+{% endblock %}

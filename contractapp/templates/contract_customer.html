@@ -1,0 +1,42 @@
+{% extends "contract_base.html" %} {% block content %}
+<div class="container">
+    <form method="POST">{% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                <label>First Name:</label>
+                <br />
+                <input  ID="txt_first_name" name="txt_first_name" data-ng-model="txt_first_name" class="form-control" />
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-3 ">
+                <Label>Last Name:</Label>
+                <br />
+                <input  ID="txt_last_name" name="txt_last_name" data-ng-model="txt_last_name" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Address:</label>
+                <br />
+                <textarea  ID="txt_address" name="txt_address" data-ng-model="txt_address"  class="form-control" ></textarea>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-3 ">
+                <Label>Phone:</Label>
+                <br />
+                <input type="number"   ID="txt_mobile" name="txt_mobile" data-ng-model="txt_mobile" class="form-control" />
+            </div>
+        </div>
+        <div class="row "><br><br>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" ng-click="custtomer_saveclick()" value="Save"/>
+            </div>
+        </div>
+    </form>
+    </div>
+    {% endblock %}
+    <!--#47a3da-->
